@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="increase(2)">Click</button>
+        <button v-on:click="counter++">Click</button>
+        <p>{{counter * 2 > 10 ? 'Greater than 10' : 'smaller than 10'}}</p>
+    </div>
+</body>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    counter : 0
+  },
+  methods: {
+  	increase: function(step) {
+          this.counter +=step
+      }
+  }
+})
+</script>
+</html>

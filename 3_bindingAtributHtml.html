@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type = "text" v-on:input="changeTitle">
+        <p>
+          {{title}} <br/>
+          <!-- {{sayHello()}} - <a href="{{link}}">Google</a> -->
+          {{sayHello()}} - <a v-bind:href="link">Google</a>
+        </p>
+      </div>
+</body>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    title: 'Hello world',
+    link: 'http://google.com'
+  },
+  methods: {
+  	changeTitle: function(e){
+    this.title = e.target.value
+    },
+    sayHello: function() {
+        //return 'hello'
+        return this.title;
+    }
+  }
+})
+</script>
+</html>

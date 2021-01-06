@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for = "ingredient in ingredients">{{ingredient}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for = "person in persons">
+                <div v-for= "(value, key, index) in person">{{key}}: {{value}} ({{index}})</div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    ingredients:['meat','fruit','cookies'],
+    persons: [
+        {name: 'Max', age:'20', color:'red'},
+        {name: 'Ana', age:'Unknown', color:'blue'},
+    ]
+  },
+})
+</script>
+</html>
